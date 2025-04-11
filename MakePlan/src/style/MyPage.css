@@ -1,0 +1,59 @@
+.mypage-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-left: 0px;
+    /* 사이드바 + 메뉴바 */
+    gap: 100px;
+    background-color: white;
+    box-sizing: border-box;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 3px solid #ccc;
+}
+
+.nickname {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    width: 300px;
+}
+
+.info-btn {
+    padding: 14px;
+    font-size: 15px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.withdraw-btn {
+    padding: 14px;
+    font-size: 15px;
+    border: 1px solid red;
+    background-color: white;
+    color: red;
+    border-radius: 6px;
+    cursor: pointer;
+}
