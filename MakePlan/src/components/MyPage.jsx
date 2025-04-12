@@ -5,7 +5,7 @@ const MyPage = () => {
   const fileInput = useRef(null);
   const [profileImage, setProfileImage] = useState('/images/default-profile.png');
 
-  // 상태로 모달 구분
+  // 모달 구분
   const [activeModal, setActiveModal] = useState(null); // 'id' | 'pw' | 'nick'
 
   const handleImageChange = (e) => {
@@ -17,10 +17,10 @@ const MyPage = () => {
     }
   };
 
-  // 모달 닫기
+  // 모달창 닫기
   const closeModal = () => setActiveModal(null);
 
-  // 각 항목별 제목 및 설명
+  
   const modalInfo = {
     id: { title: '아이디 변경', desc: '아이디를 변경해주세요.' },
     pw: { title: '비밀번호 변경', desc: '비밀번호를 변경해주세요.' },

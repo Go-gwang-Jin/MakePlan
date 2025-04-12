@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.app {
+  display: flex;
+  height: 100vh;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +41,33 @@
     transform: rotate(360deg);
   }
 }
+
+.app.dark {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+.app.dark .join-container,
+.app.dark .login-container,
+.app.dark .calendar-wrap,
+.app.dark .mypage-container,
+.app.dark .detail-container {
+  background-color: #2b2b2b;
+  color: white;
+}
+
+.app.dark input,
+.app.dark select,
+.app.dark button {
+  background-color: #3c3c3c;
+  color: white;
+  border: 1px solid #555;
+}
+
+.content-container {
+  margin-left: 0px; /* 사이드바+메뉴바 너비에 맞게 */
+  padding: 0px;
+  width: calc(100% - 220px); /* 전체 화면 - 고정된 왼쪽 너비 */
+  box-sizing: border-box;
+}
+
