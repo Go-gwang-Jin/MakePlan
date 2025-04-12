@@ -74,11 +74,13 @@
   .modal-box {
     width: 350px;
     background-color: white;
-    padding: 30px;
+    padding: 0px 30px 40px 30px;
     border-radius: 14px;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
     position: relative;
   }
+
+
   
   .modal-top {
     display: flex;
@@ -90,6 +92,7 @@
   .modal-top h3 {
     font-size: 20px;
     font-weight: bold;
+    
   }
   
   .close-btn {
@@ -99,7 +102,7 @@
   }
   
   .modal-box input {
-    width: 100%;
+    width: 92.5%;
     padding: 12px;
     margin: 16px 0;
     border-radius: 6px;
