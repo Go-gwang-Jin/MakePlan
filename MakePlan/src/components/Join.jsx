@@ -1,6 +1,8 @@
+// src/components/Join.jsx
 import React, { useState } from 'react';
 import '../style/Join.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const Join = () => {
     const [form, setForm] = useState({
@@ -22,12 +24,23 @@ const Join = () => {
         setForm({ ...form, [name]: value });
     };
 
-    const handleSubmit = () => {
-        console.log('회원가입 정보:', form);
-
-        alert('회원가입에 성공했습니다!');
-        navigate('/');
-    };
+    const handleSubmit = async () => {
+        try {
+          const birthdate = `${form.birthYear}-${form.birthMonth.padStart(2, '0')}-${form.birthDay.padStart(2, '0')}`;
+          const newForm = {
+            ...form,
+            birthdate,
+          };
+      
+          const response = await axios.post('http://localhost:8083/controller/join', newForm);
+          alert(response.data);
+          navigate('/');
+        } catch (err) {
+          alert('회원가입 실패');
+          console.error(err);
+        }
+      };
+      
 
     const handleCancel = () => {
         navigate('/');
@@ -36,41 +49,28 @@ const Join = () => {
     return (
         <div className="join-container">
             <h2 className="join-title">회원가입</h2>
-
             <div className="join-box">
-                {/* 아이디 */}
                 <label className="input-label">아이디</label>
                 <div className="input-id-wrap">
-                    <input
-                        type="text"
-                        name="userId"
-                        placeholder="아이디 입력"
-                        onChange={onChange}
-                    />
+                    <input type="text" name="userId" placeholder="아이디 입력" onChange={onChange} />
                     <button className="check-btn">중복확인</button>
                 </div>
 
-                {/* 비밀번호 */}
                 <label className="input-label">비밀번호</label>
                 <input type="password" name="password" placeholder="비밀번호 입력" onChange={onChange} />
 
-                {/* 비밀번호 확인 */}
                 <label className="input-label">비밀번호 확인</label>
                 <input type="password" name="passwordCheck" placeholder="비밀번호 재입력" onChange={onChange} />
 
-                {/* 이름 */}
                 <label className="input-label">이름</label>
                 <input type="text" name="name" placeholder="이름을 입력해주세요" onChange={onChange} />
 
-                {/* 닉네임 */}
                 <label className="input-label">닉네임</label>
                 <input type="text" name="nickname" placeholder="닉네임을 입력해주세요" onChange={onChange} />
 
-                {/* 이메일 */}
                 <label className="input-label">Email</label>
                 <input type="email" name="email" placeholder="이메일을 입력해주세요" onChange={onChange} />
 
-                {/* 생년월일 */}
                 <label className="input-label">생년월일</label>
                 <div className="birth-wrap">
                     <select name="birthYear" onChange={onChange}>
