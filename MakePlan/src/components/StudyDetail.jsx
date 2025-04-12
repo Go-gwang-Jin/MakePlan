@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import '../style/StudyDetail.css';
 
 const StudyDetail = () => {
-    const { date } = useParams();
+    // 아래 주석 풀거면 위에 import 해야함 import {useParams, useNavigate } from 'react-router-dom';
+    //const { date } = useParams();
     const navigate = useNavigate();
 
     const [fileContent, setFileContent] = useState('');
